@@ -40,8 +40,5 @@ def weirdSubtract(n,k):
                 
 
 
-
-
-
 n,s = input("Enter num and sub : ").split()
 print(weirdSubtract(n,s))

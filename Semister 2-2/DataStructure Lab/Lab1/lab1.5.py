@@ -1,3 +1,12 @@
+
+"""
+Testcase
+
+Enter All Bid : 10 20 1 2 5
+winner bid is 20 need to pay 10
+
+"""
+
 bit = [int(inp) for inp in input("Enter All Bid : ").split()]
 count = 0
 Highest = 0

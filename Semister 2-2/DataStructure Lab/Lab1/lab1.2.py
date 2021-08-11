@@ -1,3 +1,6 @@
+##พยากร อากาศ
+
+
 print(" *** Wind classification ***")
 inp = float(input("Enter wind speed (km/h) : "))
 if inp <= 51.99:

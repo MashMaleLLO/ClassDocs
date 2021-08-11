@@ -53,3 +53,15 @@ for i in lis:
 
 
 
+#EN 10,EN 20,ES 12,EN 15,ES 22
+
+#q = 10 20 
+#k = 0
+#isES = False
+# insert(0,12)
+#q = 12 10 20
+#k = 1
+#isEs = True
+#q = 12 22 10 20 15
+#k = 2
+

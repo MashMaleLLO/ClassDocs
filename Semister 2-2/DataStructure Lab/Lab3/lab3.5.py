@@ -33,6 +33,8 @@ def lookingTree(stack):
             ns.pop()
     return count
 
+
+
 def seeingTree(inp):
     s = Stack()
     for i in inp:
@@ -74,3 +76,4 @@ inp = [inp for inp in input("Enter Input : ").split(',')]
 seeingTree(inp)
 
     
+
