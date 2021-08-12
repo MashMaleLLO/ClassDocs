@@ -1,7 +1,7 @@
 # ClassDocs
 All activity in class room
 <h1 align="center">
-  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?lines=อ่าน+ตรง+นี้+ก่อน+นะ+เด็กๆ;&center=true&width=500&height=50"></a>
+  อ่านตรงนี้ก่อนนะเด็กๆ
 </h1>
 <hr>
 <p>ตอนนี้ code grader พี่ไม่ได้ใส่โจทย์เข้าไปให้แล้วพี่ก็จำไม่ค่อยได้ว่าโจทย์เป็นไง</p>
