@@ -69,5 +69,22 @@ inp = [inp for inp in input("Enter Infix expression : ")]
 print("PostFix :")
 print(infixTopostfix(inp))
 
+"""
 
+test case
+
+***Infix to Postfix***
+Enter Infix expression : a+b*c
+PostFix :
+abc*+
+
+***Infix to Postfix***
+Enter Infix expression : ((a/b)*c)^d
+PostFix :
+ab/c*d^
+
+
+
+
+"""
 

@@ -17,7 +17,16 @@ class Stack:
             
 
 
+"""
+test case
 
+ *** Stack implement by Python list***
+Enter data to stack : 1 2 3 4 5
+5 Data in stack :  ['1', '2', '3', '4', '5']
+0 Data in stack :  []
+
+
+"""
 
 
 

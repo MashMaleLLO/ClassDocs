@@ -51,3 +51,26 @@ if combo >= 2:
 else:
     pass            
 
+"""
+test case 
+
+Enter Input : 1 2 2 3 4
+5
+43221
+
+Enter Input : a b b c d d e d
+8
+deddcbba
+
+Enter Input : a a a a b c e
+4
+ecba
+
+
+Enter Input : b a a a b b c a a a c c
+0
+Empty
+Combo : 4 ! ! !
+
+
+"""

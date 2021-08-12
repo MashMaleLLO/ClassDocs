@@ -77,3 +77,17 @@ seeingTree(inp)
 
     
 
+"""
+test case
+
+Enter Input : A 3,A 1,A 2,B
+2
+
+Enter Input : A 5,A 4,A 3,B,S,B,S,S,B,A 1,A 1,A 5,B,S
+3
+2
+2
+3
+
+
+"""

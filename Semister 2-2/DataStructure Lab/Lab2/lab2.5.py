@@ -22,5 +22,31 @@ def deCoderII(j):
     return 4*((lenA)+1)  
 
 
+"""
+test case
+
+hint:
+a = 4
+b = 8
+c = 12
+d = 16
+.
+.
+.
+z = 104
+
+Enter secret code : aaec
+4
+
+Enter secret code : abcc
+12
+
+
+Enter secret code : free
+20
+
+"""
+
+
 inp = input("Enter secret code : ")    
 print(deCoderII(deCoder(inp)))

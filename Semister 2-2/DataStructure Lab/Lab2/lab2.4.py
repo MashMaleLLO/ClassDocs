@@ -82,6 +82,23 @@ def sumFive(lis):
         return("Array Input Length Must More Than 2")                                                       
 
             
+"""
+test case
+
+Enter Your List : 5 5 5 1 2 3 4
+[[2, 1, 2]]
+
+
+Enter Your List : 6 4 7 5 2 5 1
+[[1, 2, 2]]
+
+Enter Your List : 5 5 5 5 5 5 5 5
+0
+
+
+"""
+
+
 
 inp = list(map(int, input("Enter Your List : ").split()))
 print(sumFive(inp))

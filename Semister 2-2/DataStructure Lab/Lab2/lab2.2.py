@@ -38,7 +38,23 @@ def weirdSubtract(n,k):
     else:
         return "0"                              
                 
+"""
+test case
 
+Enter num and sub : 45 26
+19
+
+Enter num and sub : 70 52
+0
+
+
+Enter num and sub : 14 3
+11
+
+Enter num and sub : 70 1
+7
+
+"""
 
 n,s = input("Enter num and sub : ").split()
 print(weirdSubtract(n,s))

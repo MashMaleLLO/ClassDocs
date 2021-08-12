@@ -93,7 +93,23 @@ else:
         else:
             pass       
 
+"""
 
+test case
+
+Enter expresion : {(())}
+{(())} MATCH
+
+Enter expresion : {[()
+{[() open paren excess   2 : {[
+
+Enter expresion : {{()}}}
+{{()}}} close paren excess
+
+Enter expresion : {{{()}}
+{{{()}} open paren excess   1 : {
+
+"""
                                   
 
         
