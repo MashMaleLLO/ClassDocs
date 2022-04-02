@@ -1,0 +1,442 @@
+﻿@{
+    ViewData["Title"] = "Calculator";
+}
+
+<style>
+
+    .calculator {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+    }
+
+    .calculator-screen {
+        width: 100%;
+        font-size: 3rem;
+        height: 80px;
+        border: none;
+        background-color: #252525;
+        color: #fff;
+        text-align: right;
+        padding-right: 20px;
+        padding-left: 10px;
+    }
+
+
+    .calculator-keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    button {
+        height: 60px;
+        background-color: #fff;
+        border-radius: 3px;
+        border: 1px solid #c4c4c4;
+        background-color: transparent;
+        font-size: 2rem;
+        color: #333;
+        background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+        text-shadow: 0 1px rgba(255,255,255,.4);
+    }
+
+        button:hover {
+            background-color: #eaeaea;
+        }
+
+    .operator {
+        color: #337cac;
+    }
+
+    .all-clear {
+        background-color: #f0595f;
+        border-color: #b0353a;
+        color: #fff;
+    }
+
+        .all-clear:hover {
+            background-color: #f17377;
+        }
+
+    .equal-sign {
+        background-color: #2e86c0;
+        border-color: #337cac;
+        color: #fff;
+        height: 100%;
+        grid-area: 2 / 4 / 6 / 5;
+    }
+
+        .equal-sign:hover {
+            background-color: #4e9ed4;
+        }
+</style>
+
+
+<script>
+    var xmlhttp = new XMLHttpRequest();
+    MakeReq = (serverpage, objID) => {
+        let obj = document.getElementById(objID);
+        xmlhttp.open("GET", serverpage);
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                obj.innerHTML = xmlhttp.responseText;
+                textInput = document.getElementById(objID).innerHTML;
+            }
+        }
+        xmlhttp.send(null);
+    }
+    var textInput = ""
+    var boolVar = false;
+    const opare = ['+','-','*','/','.']
+    write0 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "0"
+            boolVar = false
+        }
+        else {
+            textInput += "0"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write1 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "1"
+            boolVar = false
+        }
+        else {
+            textInput += "1"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write2 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "2"
+            boolVar = false
+        }
+        else {
+            textInput += "2"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write3 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "3"
+            boolVar = false
+        }
+        else {
+            textInput += "3"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write4 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "4"
+            boolVar = false
+        }
+        else {
+            textInput += "4"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write5 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "5"
+            boolVar = false
+        }
+        else {
+            textInput += "5"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write6 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "6"
+            boolVar = false
+        }
+        else {
+            textInput += "6"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write7 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "7"
+            boolVar = false
+        }
+        else {
+            textInput += "7"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write8 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "8"
+            boolVar = false
+        }
+        else {
+            textInput += "8"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+    write9 = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        if (boolVar == true) {
+            textInput = "9"
+            boolVar = false
+        }
+        else {
+            textInput += "9"
+        }
+        document.getElementById("numText").innerHTML = textInput;
+    }
+
+    isItOkToAdd = (thoseOne, thisOne) => {
+        console.log(thoseOne, thisOne)
+        if (thoseOne == '') { return true }
+        else if (opare.includes(thisOne) && opare.includes(thoseOne)) { return false }
+        else { return true }
+    }
+
+    addition = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        else if (textInput.length < 2) {
+            boolVar = false
+            textInput += " + "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        else if (isItOkToAdd(textInput[textInput.length - 2], "+") == false) {
+            document.getElementById("numText").innerHTML = textInput
+        }
+        else {
+            boolVar = false
+            textInput += " + "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        
+    }
+    subtract = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        else if (textInput.length < 2) {
+            boolVar = false
+            textInput += " - "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        else if (isItOkToAdd(textInput[textInput.length - 2], "-") == false) {
+            document.getElementById("numText").innerHTML = textInput
+        }
+        else {
+            boolVar = false
+            textInput += " - "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+    }
+    multiply = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        else if (textInput.length < 2) {
+            boolVar = false
+            textInput += " * "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        else if (isItOkToAdd(textInput[textInput.length - 2], "*") == false) {
+            document.getElementById("numText").innerHTML = textInput
+        }
+        else {
+            boolVar = false
+            textInput += " * "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+    }
+    devide = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        else if (textInput.length < 2) {
+            boolVar = false
+            textInput += " / "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        else if (isItOkToAdd(textInput[textInput.length - 2], "/") == false) {
+            document.getElementById("numText").innerHTML = textInput
+        }
+        else {
+            boolVar = false
+            textInput += " / "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+    }
+    dot = () => {
+        if (textInput.length > 38) {
+            alert("Maximum Value Enter!");
+            boolVar = true;
+            textInput = "Enter Number";
+            document.getElementById("numText").innerHTML = textInput;
+            return;
+        }
+        else if (textInput.length < 2) {
+            boolVar = false
+            textInput += " . "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+        else if (isItOkToAdd(textInput[textInput.length - 2], ".") == false) {
+            document.getElementById("numText").innerHTML = textInput
+        }
+        else {
+            boolVar = false
+            textInput += " . "
+            document.getElementById("numText").innerHTML = textInput;
+        }
+    }
+    allClear = () => {
+        boolVar = false
+        textInput = ""
+        document.getElementById("numText").innerHTML = "Enter Number";
+    }
+    enterEqual = () => {
+        var lastChar = textInput[textInput.length - 1];
+        if (lastChar == " " || lastChar == ".") {
+            alert("Error input!");
+        }
+        else {
+            boolVar = true;
+            MakeReq('/Home/Calculate/?number=' + textInput.replaceAll(" + ", " %2B "), 'numText'); return false;
+        }
+    }
+</script>
+
+<div class="calculator">
+
+    <div class="calculator-screen">
+        <p class="inputText" id="numText"></p>
+        <script>
+            document.getElementById("numText").innerHTML = "Enter Number";
+        </script>
+    </div>
+
+    <div class="calculator-keys">
+
+        <button type="button" class="operator" value="+" onclick="addition()">+</button>
+        <button type="button" class="operator" value="-" onclick="subtract()">-</button>
+        <button type="button" class="operator" value="*" onclick="multiply()">&times;</button>
+        <button type="button" class="operator" value="/" onclick="devide()">&divide;</button>
+
+        <button type="button" value="7" onclick="write7()">7</button>
+        <button type="button" value="8" onclick="write8()">8</button>
+        <button type="button" value="9" onclick="write9()">9</button>
+
+
+        <button type="button" value="4" onclick="write4()">4</button>
+        <button type="button" value="5" onclick="write5()">5</button>
+        <button type="button" value="6" onclick="write6()">6</button>
+
+
+        <button type="button" value="1" onclick="write1()">1</button>
+        <button type="button" value="2" onclick="write2()">2</button>
+        <button type="button" value="3" onclick="write3()">3</button>
+
+
+        <button type="button" value="0" onclick="write0()">0</button>
+        <button type="button" class="decimal" value="." onclick="dot()">.</button>
+        <button type="button" class="all-clear" value="all-clear" onclick="allClear()">AC</button>
+
+        <button type="button" class="equal-sign" value="=" onclick="enterEqual()">=</button>
+
+    </div>
+</div>
